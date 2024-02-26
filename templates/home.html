@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedMinder - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Additional custom styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: #6366F1;
+            color: #fff;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+        }
+        .medication-input-form input[type="text"],
+        .medication-input-form input[type="time"] {
+            border-radius: 8px;
+            border: 1px solid #A5B4FC;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .medication-input-form button {
+            background-color: #6366F1;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .medication-list li {
+            border-bottom: 1px solid #A5B4FC;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .medication-list li span:first-child {
+            font-weight: bold;
+        }
+        .logout-form button {
+            background-color: #EF4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <header class="header text-center py-6 mb-10">
+            <h1 class="text-3xl font-semibold">MedMinder</h1>
+            <p class="text-lg">Never miss a dose</p>
+        </header>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="medication-input-form p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-lg font-semibold mb-4">Add Medication</h2>
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="medication_name" class="block text-sm font-medium text-gray-700">Medication Name</label>
+                        <input id="medication_name" name="medication_name" type="text" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="medication_time" class="block text-sm font-medium text-gray-700">Time to Take Medication</label>
+                        <input id="medication_time" name="medication_time" type="time" required>
+                    </div>
+
+                    <button type="submit">Add Medication</button>
+                </form>
+            </div>
+
+            <div class="medication-list p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-lg font-semibold mb-4">Medication List</h2>
+                <ul>
+                    {% for medication in medications %}
+                        <li>
+                            <span>{{ medication.name }}</span>
+                            <span>{{ medication.time }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="logout-form text-center mt-8">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-md">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
