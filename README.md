@@ -1,7 +1,8 @@
 # Healthcare Management System
-![Screenshot (129)](https://github.com/shanmukhsrisaivedullapalli/Healthcare/assets/90882705/2ae66965-fc17-40c9-842a-7a64f755ec58)
-![Screenshot (130)](https://github.com/shanmukhsrisaivedullapalli/Healthcare/assets/90882705/86642171-8c46-4318-83af-f09256fddabf)
-![Screenshot (131)](https://github.com/shanmukhsrisaivedullapalli/Healthcare/assets/90882705/16d4061e-36c9-4353-8609-d8df47b9ee39)
+
+![Screenshot (130)](https://github.com/shanmukhsrisaivedullapalli/Healthcare/assets/90882705/fe19f308-18dd-4e3b-9130-f84db3122b02)
+![Screenshot (129)](https://github.com/shanmukhsrisaivedullapalli/Healthcare/assets/90882705/e1ecdf63-eb45-404d-9399-1f627126e485)
+![Screenshot (131)](https://github.com/shanmukhsrisaivedullapalli/Healthcare/assets/90882705/0133a23f-6436-449c-97a7-ebf2685f7537)
 
 
 
